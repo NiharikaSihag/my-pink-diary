@@ -349,24 +349,7 @@ export type Database = {
       }
     }
     Views: {
-      public_comments: {
-        Row: {
-          commenter_name: string | null
-          content: string | null
-          created_at: string | null
-          id: string | null
-          post_id: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "comments_post_id_fkey"
-            columns: ["post_id"]
-            isOneToOne: false
-            referencedRelation: "posts"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
+      [_ in never]: never
     }
     Functions: {
       has_role: {
